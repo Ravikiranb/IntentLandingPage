@@ -162,7 +162,12 @@
       font-weight: 600;
       text-decoration: none;
       border: 1px solid var(--card-border);
-      cursor: default;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--card-border);
     }
 
     /* ── HERO ── */
@@ -291,6 +296,59 @@
 
     .btn-secondary:hover {
       background: var(--card);
+    }
+
+    /* ── STORE BADGES ── */
+    .store-badges {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 172px;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 13px;
+      padding: 9px 18px;
+      text-decoration: none;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .store-badge:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.55);
+    }
+
+    .store-badge-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+
+    .store-badge-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.12;
+      text-align: left;
+      color: #fff;
+    }
+
+    .store-badge-top {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+
+    .store-badge-bottom {
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-top: 1px;
     }
 
     /* ── PHONE MOCKUP ── */
@@ -1020,7 +1078,7 @@
       <li><a href="#how">How it works</a></li>
       <li><a href="#privacy">Privacy</a></li>
     </ul>
-    <a class="nav-cta">Coming Soon</a>
+    <a href="#download" class="nav-cta">Download</a>
   </nav>
 
   <!-- HERO -->
@@ -1033,11 +1091,30 @@
     <h1 class="reveal-on-scroll delay-1">Use your phone<br /><span class="gradient">on purpose.</span></h1>
     <p class="hero-sub reveal-on-scroll delay-2">Intent tracks your screen time, runs AI-powered focus sessions, and coaches you to build
       healthier digital habits — all on-device.</p>
-    <div class="hero-actions reveal-on-scroll delay-3">
-      <a href="#features" class="btn-primary">See features →</a>
-      <div class="btn-secondary" style="cursor:default; opacity:0.75;">
-        🔔 Coming soon to App Store & Google Play
-      </div>
+    <div class="store-badges hero-actions reveal-on-scroll delay-3">
+      <a class="store-badge" href="https://apps.apple.com/us/app/intent-focus-screen-time/id6799595789"
+        target="_blank" rel="noopener" aria-label="Download on the App Store">
+        <svg class="store-badge-icon" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+          <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 8.99 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.47 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+        </svg>
+        <span class="store-badge-text">
+          <span class="store-badge-top">Download on the</span>
+          <span class="store-badge-bottom">App Store</span>
+        </span>
+      </a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.intent.android"
+        target="_blank" rel="noopener" aria-label="Get it on Google Play">
+        <svg class="store-badge-icon" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill="#00a0ff" d="M0 0 L11 5.5 L11 10 L0 10 Z" />
+          <path fill="#ffce00" d="M11 5.5 L20 10 L11 10 Z" />
+          <path fill="#ff3a44" d="M11 10 L20 10 L11 14.5 Z" />
+          <path fill="#00e676" d="M0 10 L11 10 L11 14.5 L0 20 Z" />
+        </svg>
+        <span class="store-badge-text">
+          <span class="store-badge-top">GET IT ON</span>
+          <span class="store-badge-bottom">Google Play</span>
+        </span>
+      </a>
     </div>
   </div>
 
@@ -1281,13 +1358,33 @@
   <!-- CTA -->
   <div class="cta-section" id="download">
     <div class="cta-glow"></div>
-    <div class="section-label reveal-on-scroll">Coming Soon</div>
+    <div class="section-label reveal-on-scroll">Now Available</div>
     <h2 class="reveal-on-scroll delay-1">Start using your phone<br />with intention.</h2>
-    <p class="reveal-on-scroll delay-2">Intent is currently in development. No account. No data collection. Just focus.</p>
-    <div class="hero-actions reveal-on-scroll delay-3">
-      <div class="btn-primary" style="cursor:default; opacity:0.75;">
-        🔔 Coming soon to App Store & Google Play
-      </div>
+    <p class="reveal-on-scroll delay-2">Download Intent free on iOS and Android. No account. No data collection. Just focus.</p>
+    <div class="store-badges hero-actions reveal-on-scroll delay-3">
+      <a class="store-badge" href="https://apps.apple.com/us/app/intent-focus-screen-time/id6799595789"
+        target="_blank" rel="noopener" aria-label="Download on the App Store">
+        <svg class="store-badge-icon" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+          <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 8.99 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.47 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+        </svg>
+        <span class="store-badge-text">
+          <span class="store-badge-top">Download on the</span>
+          <span class="store-badge-bottom">App Store</span>
+        </span>
+      </a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.intent.android"
+        target="_blank" rel="noopener" aria-label="Get it on Google Play">
+        <svg class="store-badge-icon" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill="#00a0ff" d="M0 0 L11 5.5 L11 10 L0 10 Z" />
+          <path fill="#ffce00" d="M11 5.5 L20 10 L11 10 Z" />
+          <path fill="#ff3a44" d="M11 10 L20 10 L11 14.5 Z" />
+          <path fill="#00e676" d="M0 10 L11 10 L11 14.5 L0 20 Z" />
+        </svg>
+        <span class="store-badge-text">
+          <span class="store-badge-top">GET IT ON</span>
+          <span class="store-badge-bottom">Google Play</span>
+        </span>
+      </a>
     </div>
     <div class="badge-row reveal-on-scroll delay-4">
       <div class="badge-item">
@@ -1318,7 +1415,7 @@
     </div>
     <ul class="footer-links">
       <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="#">Terms</a></li>
+      <li><a href="delete-data.html">Delete Data</a></li>
       <li><a href="mailto:ravikiran.b2003@gmail.com">Support</a></li>
     </ul>
     <div class="footer-copy">© 2026 Intent. All rights reserved.</div>
