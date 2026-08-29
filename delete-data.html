@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Intent</title>
+  <title>Delete Your Data — Intent</title>
   <meta name="description"
-    content="Intent's privacy policy: what data the app accesses, what it does with it, and how you can control or remove it. Core features run on-device; the only data that leaves is Firebase diagnostics." />
+    content="How to delete your Intent data. Intent has no accounts — all data is stored on your device. This page explains how to remove it completely and how to request deletion of crash diagnostics." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -282,7 +282,7 @@
       margin-bottom: 0;
     }
 
-    /* ── SUMMARY CALLOUT ── */
+    /* ── CALLOUT ── */
     .callout {
       background: linear-gradient(135deg, rgba(160, 125, 200, 0.08), rgba(123, 94, 167, 0.02));
       border: 1px solid rgba(160, 125, 200, 0.15);
@@ -293,6 +293,60 @@
 
     .callout p:last-child {
       margin-bottom: 0;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 22px 24px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      transition: border-color 0.25s;
+    }
+
+    .step:hover {
+      border-color: var(--card-border-hover);
+    }
+
+    .step-num {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-light);
+      background: rgba(160, 125, 200, 0.1);
+      border: 1px solid rgba(160, 125, 200, 0.18);
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .step .path {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--text-primary);
     }
 
     /* ── TABLE ── */
@@ -307,7 +361,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 15px;
-      min-width: 560px;
+      min-width: 480px;
     }
 
     thead th {
@@ -340,47 +394,28 @@
       font-weight: 500;
     }
 
-    .no-tag {
+    .tag-local {
       color: var(--green);
       font-weight: 600;
       white-space: nowrap;
     }
 
-    /* ── DIVIDER LIST (What Intent does NOT do) ── */
-    .check-list {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .check-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+    /* ── CONTACT CARD ── */
+    .contact-card {
       background: var(--card);
       border: 1px solid var(--card-border);
-      border-radius: var(--radius-sm);
-      padding: 14px 18px;
-      margin: 0;
-      color: var(--text-primary);
-      font-weight: 500;
-      font-size: 15px;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin: 24px 0;
+      text-align: center;
     }
 
-    .check-list .x {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: rgba(48, 209, 88, 0.15);
-      color: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      flex-shrink: 0;
-      margin-top: 1px;
+    .contact-card .email {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 8px;
     }
 
     /* ── FOOTER ── */
@@ -469,7 +504,7 @@
     <ul class="nav-links">
       <li><a href="index.html#features">Features</a></li>
       <li><a href="index.html#how">How it works</a></li>
-      <li><a href="index.html#privacy">Privacy</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
     </ul>
     <a class="nav-logo" href="index.html" style="font-size:14px;color:var(--text-secondary);">← Back to home</a>
   </nav>
@@ -477,109 +512,95 @@
   <!-- HEADER -->
   <header class="doc-header">
     <div class="doc-header-glow"></div>
-    <div class="doc-eyebrow">Legal</div>
-    <h1>Privacy Policy</h1>
-    <div class="doc-updated">Last updated: July 3, 2026</div>
+    <div class="doc-eyebrow">Your data</div>
+    <h1>Delete your data</h1>
+    <div class="doc-updated">Last updated: July 19, 2026</div>
   </header>
 
   <!-- BODY -->
   <main class="doc-body">
 
     <div class="doc-intro">
-      <p>This policy explains what data Intent ("the app") accesses, what it does with that data, and how you can
-        control or remove it. Intent is developed by Ravikiran (contact below). This is a draft prepared for Play Store
-        submission — have it reviewed before publishing if you have specific legal requirements in your jurisdiction.</p>
+      <p>Intent is designed to keep your data on your device. This page explains exactly what data exists, how to delete
+        all of it, and how to request removal of the small amount of crash-diagnostic data that is sent off-device.</p>
     </div>
 
-    <h2>Summary</h2>
+    <h2>There's no account to delete</h2>
     <div class="callout">
-      <p>Intent is a screen-time and focus app. Its core features (usage analytics, focus sessions, app blocking) work
-        entirely on your device. Intent does not require an account, does not show ads, and does not sell or share your
-        data with third parties.</p>
-      <p>Intent does use Firebase Crashlytics and Firebase Analytics for stability monitoring. This is the one place data
-        leaves your device, and it's described in detail below.</p>
+      <p>Intent does <strong>not</strong> require an account or sign-in, and it does not create one for you. There is no
+        username, password, email, or profile stored on any server — so there is no account to close.</p>
+      <p>Everything Intent knows about you (your screen-time history, focus sessions, daily goals, and settings) is
+        stored locally on your device. Deleting your data means clearing it from the device, as described below.</p>
     </div>
 
-    <h2>Data Intent reads from your device</h2>
+    <h2>What data exists and where</h2>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Data</th>
-            <th>Purpose</th>
-            <th>Leaves the device?</th>
+            <th>Where it lives</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>App usage stats (<code>PACKAGE_USAGE_STATS</code>)</td>
-            <td>Show your own screen time, app usage breakdowns, and weekly trends inside the app</td>
-            <td><span class="no-tag">No</span> — read and displayed locally only</td>
-          </tr>
-          <tr>
-            <td>Accessibility events (foreground app changes)</td>
-            <td>Detect when a blocked app is opened during an active focus session, to show the blocking overlay</td>
-            <td><span class="no-tag">No</span> — processed on-device only, no content from other apps is read</td>
-          </tr>
-          <tr>
             <td>Focus session history, daily goals, settings</td>
-            <td>Core app functionality (scores, streaks, progress)</td>
-            <td><span class="no-tag">No</span> — stored locally in the app's Room database</td>
+            <td><span class="tag-local">On your device</span> — the app's local Room database</td>
+          </tr>
+          <tr>
+            <td>Screen-time and app-usage stats</td>
+            <td><span class="tag-local">On your device</span> — read from the system, never stored off-device</td>
+          </tr>
+          <tr>
+            <td>Crash logs & anonymous diagnostics</td>
+            <td>Sent to Firebase (Google) for stability monitoring — deletable by request</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p>Intent never reads notification content, screen content, keystrokes, or accessed app data beyond the foreground
-      package name needed for blocking.</p>
 
-    <h2>Data sent off the device</h2>
-    <p>Intent uses <strong>Firebase Crashlytics</strong> and <strong>Firebase Analytics</strong> (Google) to detect
-      crashes and app-stability issues in released builds. This can include:</p>
-    <ul>
-      <li>Crash logs and stack traces</li>
-      <li>Basic device/app diagnostic info (device model, OS version, app version)</li>
-      <li>Anonymous usage events for stability monitoring (e.g., screen views, feature-level crash correlation)</li>
-    </ul>
-    <p>This diagnostic data is sent to Google's Firebase infrastructure and is subject to
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. It does
-      not include your screen-time data, the names of apps you use or block, or any personally identifying information
-      beyond what's inherent to a crash report.</p>
+    <h2>Delete all on-device data</h2>
+    <p>You have two ways to remove the data Intent stores on your device. Both are immediate and permanent.</p>
 
-    <h2>What Intent does NOT do</h2>
-    <ul class="check-list">
-      <li><span class="x">✓</span> No account or sign-in required</li>
-      <li><span class="x">✓</span> No ads or ad SDKs</li>
-      <li><span class="x">✓</span> No sale of data to third parties</li>
-      <li><span class="x">✓</span> No cloud sync of your usage or focus data (as of v1.0)</li>
-      <li><span class="x">✓</span> No reading of message, email, or app content</li>
-    </ul>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">A</div>
+        <div>
+          <h3>Clear the app's data</h3>
+          <p>This wipes Intent's local database while keeping the app installed.</p>
+          <p class="path">Settings → Apps → Intent → Storage → Clear Data</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">B</div>
+        <div>
+          <h3>Uninstall the app</h3>
+          <p>Removing Intent deletes all of its local data along with it. Long-press the Intent icon and choose
+            <strong>Uninstall</strong>, or remove it from <span class="path">Settings → Apps → Intent</span>.</p>
+        </div>
+      </div>
+    </div>
 
-    <h2>How to delete your data</h2>
-    <ul>
-      <li>Clear all local data: Settings → Storage → Intent → Clear Data, or uninstall the app.</li>
-      <li>Crash/analytics data already sent to Firebase can be deleted by request — contact us at the email below.</li>
-    </ul>
+    <p>After either step, all focus history, goals, journal entries, and settings stored by Intent are gone. This
+      action cannot be undone, and none of that data was ever copied to a server.</p>
 
-    <h2>Permissions and why Intent asks for them</h2>
-    <ul>
-      <li><strong>Usage Access</strong> — read your own screen-time stats, shown only to you.</li>
-      <li><strong>Accessibility Service</strong> — detect blocked-app launches during a focus session and show the
-        blocking overlay. Does not read other apps' content.</li>
-      <li><strong>Display Over Other Apps</strong> — show the blocking overlay.</li>
-      <li><strong>Notifications</strong> — session timers and daily-goal reminders.</li>
-      <li><strong>Battery Optimization Exemption</strong> — keep focus-session tracking running reliably in the
-        background.</li>
-    </ul>
+    <h2>Delete crash & diagnostic data</h2>
+    <p>The only data Intent sends off your device is crash logs and anonymous stability diagnostics, processed by
+      <strong>Firebase Crashlytics</strong> and <strong>Firebase Analytics</strong> (Google). This never includes your
+      screen-time data or the names of apps you use or block.</p>
+    <p>To request deletion of diagnostic data already associated with your device, email us and we'll remove it:</p>
 
-    <h2>Children's privacy</h2>
-    <p>Intent is not directed at children under 13 and does not knowingly collect data from them.</p>
+    <div class="contact-card">
+      <p style="margin:0;color:var(--text-tertiary);">Request diagnostic-data deletion</p>
+      <a class="email" href="mailto:ravikiran.b2003@gmail.com?subject=Data%20deletion%20request">ravikiran.b2003@gmail.com</a>
+    </div>
 
-    <h2>Changes to this policy</h2>
-    <p>We'll update the "Last updated" date above if this policy changes materially.</p>
+    <p>Please send your request from, or mention, the device you'd like cleared so we can identify the correct records.
+      We'll confirm once the deletion is complete.</p>
 
-    <h2>Contact</h2>
-    <p>Questions about this policy or your data:
-      <a href="mailto:ravikiran.b2003@gmail.com">ravikiran.b2003@gmail.com</a></p>
+    <h2>Questions</h2>
+    <p>For anything else about your data, see our <a href="privacy.html">Privacy Policy</a> or contact
+      <a href="mailto:ravikiran.b2003@gmail.com">ravikiran.b2003@gmail.com</a>.</p>
 
   </main>
 
